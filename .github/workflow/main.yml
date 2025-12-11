@@ -1,0 +1,18 @@
+name: demo1
+
+on:
+  workflow_dispatch:
+jobs:
+  build-using-maven:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: checkout
+        uses: actions/v6.0.1
+
+        -name: building using maven
+         run: mvn -B package
+
+         -name: listing the artifact
+          run: ls -lh target/
+    
